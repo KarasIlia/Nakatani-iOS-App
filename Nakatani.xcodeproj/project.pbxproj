@@ -66,14 +66,12 @@
 		DEB0EEC92477A90700357AAA /* Nakatani */ = {
 			isa = PBXGroup;
 			children = (
-				DEB0EECA2477A90700357AAA /* AppDelegate.swift */,
-				DEB0EECC2477A90700357AAA /* SceneDelegate.swift */,
+				DEB9E9FF2544A451008D53D8 /* Extensions */,
+				DEB9E9FC2544A439008D53D8 /* App */,
+				DEB9E9E925432FC4008D53D8 /* BTService */,
 				DEB0EECE2477A90700357AAA /* ViewController.swift */,
 				DE9C51CA253B4AC100DCC9A6 /* BLEViewController.swift */,
-				DEB9E9E925432FC4008D53D8 /* BTService */,
-				DEB9E9E2253F433C008D53D8 /* String + Extensions.swift */,
 				DEB0EED02477A90700357AAA /* Main.storyboard */,
-				DEB0EED52477A91500357AAA /* LaunchScreen.storyboard */,
 				DEB9E9F02544A231008D53D8 /* Supporting Files */,
 			);
 			path = Nakatani;
@@ -96,6 +94,24 @@
 				DEB0EED32477A91500357AAA /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DEB9E9FC2544A439008D53D8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DEB0EECA2477A90700357AAA /* AppDelegate.swift */,
+				DEB0EECC2477A90700357AAA /* SceneDelegate.swift */,
+				DEB0EED52477A91500357AAA /* LaunchScreen.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DEB9E9FF2544A451008D53D8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DEB9E9E2253F433C008D53D8 /* String + Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
