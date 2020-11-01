@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE60E1F2254EC29100CF176A /* DoublyLinkedPointsList + Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE60E1F1254EC29100CF176A /* DoublyLinkedPointsList + Point.swift */; };
+		DE047A6B254F06C900CCD026 /* DoubleLinkedNodeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE047A6A254F06C900CCD026 /* DoubleLinkedNodeList.swift */; };
 		DE60E1FC254ED5D900CF176A /* ResearchViewController + Scene Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE60E1FB254ED5D900CF176A /* ResearchViewController + Scene Setup.swift */; };
 		DE60E1FF254ED6CE00CF176A /* ResearchViewController + UI Elements Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE60E1FE254ED6CE00CF176A /* ResearchViewController + UI Elements Setup.swift */; };
 		DEB0EECB2477A90700357AAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB0EECA2477A90700357AAA /* AppDelegate.swift */; };
@@ -25,7 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DE60E1F1254EC29100CF176A /* DoublyLinkedPointsList + Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DoublyLinkedPointsList + Point.swift"; sourceTree = "<group>"; };
+		DE047A6A254F06C900CCD026 /* DoubleLinkedNodeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleLinkedNodeList.swift; sourceTree = "<group>"; };
 		DE60E1FB254ED5D900CF176A /* ResearchViewController + Scene Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResearchViewController + Scene Setup.swift"; sourceTree = "<group>"; };
 		DE60E1FE254ED6CE00CF176A /* ResearchViewController + UI Elements Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResearchViewController + UI Elements Setup.swift"; sourceTree = "<group>"; };
 		DEB0EEC72477A90700357AAA /* Nakatani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nakatani.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,7 +66,7 @@
 		DE60E1F4254EC2F100CF176A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DE60E1F1254EC29100CF176A /* DoublyLinkedPointsList + Point.swift */,
+				DE047A6A254F06C900CCD026 /* DoubleLinkedNodeList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -240,13 +240,13 @@
 			files = (
 				DEB9E9EE25432FEC008D53D8 /* BTService.swift in Sources */,
 				DEE04A7C254C20BC004BF6A3 /* ResearchProcessManager.swift in Sources */,
-				DE60E1F2254EC29100CF176A /* DoublyLinkedPointsList + Point.swift in Sources */,
 				DEB0EECF2477A90700357AAA /* ResearchViewController.swift in Sources */,
 				DEB9E9EB25432FDF008D53D8 /* BTDiscovery.swift in Sources */,
 				DEB0EECB2477A90700357AAA /* AppDelegate.swift in Sources */,
 				DE60E1FF254ED6CE00CF176A /* ResearchViewController + UI Elements Setup.swift in Sources */,
 				DE60E1FC254ED5D900CF176A /* ResearchViewController + Scene Setup.swift in Sources */,
 				DEB9EA08254B18A8008D53D8 /* Array + Extensions.swift in Sources */,
+				DE047A6B254F06C900CCD026 /* DoubleLinkedNodeList.swift in Sources */,
 				DEB0EECD2477A90700357AAA /* SceneDelegate.swift in Sources */,
 				DEB9E9E3253F433C008D53D8 /* String + Extensions.swift in Sources */,
 			);
@@ -395,7 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = KN392APKS7;
 				INFOPLIST_FILE = "$(SRCROOT)/Nakatani/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -403,7 +403,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.infibo.nakatani;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -416,7 +416,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = KN392APKS7;
 				INFOPLIST_FILE = "$(SRCROOT)/Nakatani/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -424,7 +424,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.infibo.nakatani;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

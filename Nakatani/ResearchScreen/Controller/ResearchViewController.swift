@@ -22,16 +22,19 @@ class ResearchViewController: UIViewController {
   // MARK: - Properties
   var scnScene = SCNScene()
   var cameraNode: SCNNode!
-  
   var handNode: SCNNode!
-  
-  var nodePointOneOne: SCNNode!
-  var nodePointOneTwo: SCNNode!
-  var nodePointOneThree: SCNNode!
-  
-  var nodePointTwoOne: SCNNode!
-  var nodePointTwoTwo: SCNNode!
-  var nodePointTwoThree: SCNNode!
+   
+  var actToGreen: SCNAction = {
+    SCNAction.customAction(duration: 0.7, action: { (node, elapsedTime) in
+      node.geometry?.firstMaterial?.diffuse.contents = UIColor.systemGreen
+    })
+  }()
+
+  var actToRed: SCNAction = {
+    SCNAction.customAction(duration: 0.7, action: { (node, elapsedTime) in
+      node.geometry?.firstMaterial?.diffuse.contents = UIColor.red
+    })
+  }()
   
   var activePointAnimation: SCNAction = {
     let duration: TimeInterval = 0.7
@@ -39,7 +42,7 @@ class ResearchViewController: UIViewController {
     let actToGreen = SCNAction.customAction(duration: duration, action: { (node, elapsedTime) in
       node.geometry?.firstMaterial?.diffuse.contents = UIColor.systemGreen
     })
-    
+
     let actToRed = SCNAction.customAction(duration: duration, action: { (node, elapsedTime) in
       node.geometry?.firstMaterial?.diffuse.contents = UIColor.red
     })
@@ -67,7 +70,7 @@ class ResearchViewController: UIViewController {
     setupScene()
     setupCamera()
     addHand()
-    setupPoints()
+    setupPoints(using: researchProcessManager.doublyLinkedPoints.getNodes())
     setupResistanceView()
     setupActionButtons()
     setupConnectionIndicator()
@@ -77,9 +80,15 @@ class ResearchViewController: UIViewController {
     
     // Watch for resistance packets
     NotificationCenter.default.addObserver(self, selector: #selector(self.resistanceObtained(_:)), name: NSNotification.Name(rawValue: BLEServiceObtainedResistanceNotification), object: nil)
+    NotificationCenter.default.addObserver(researchProcessManager!, selector: #selector(researchProcessManager.resistanceObtained(_:)), name: NSNotification.Name(rawValue: BLEServiceObtainedResistanceNotification), object: nil)
     
     // Start the Bluetooth discovery process
     _ = btDiscoverySharedInstance
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    startADC()
   }
   
   override var shouldAutorotate: Bool {
@@ -90,37 +99,55 @@ class ResearchViewController: UIViewController {
     return true
   }
   
-  // MARK: - @IBAction & @objc functions
-  
-  @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
+  func rotateHand(_ direction: UISwipeGestureRecognizer.Direction) {
     let hand = sceneView.scene?.rootNode.childNode(withName: "Hand", recursively: true)!
 
-    if gesture.direction == .right {
+    if direction == .right {
       hand?.runAction(SCNAction.rotateBy(x: 0, y: .pi, z: 0, duration: 0.5))
     }
-    else if gesture.direction == .left {
+    else if direction == .left {
       hand?.runAction(SCNAction.rotateBy(x: 0, y: -.pi, z: 0, duration: 0.5))
     }
   }
   
+  // MARK: - @IBAction & @objc functions
+  
+  @objc func handleGesture(gesture: UISwipeGestureRecognizer) {
+    rotateHand(gesture.direction)
+  }
+  
   @IBAction func startADC() {
     sendRequest(for: .startADC)
-    nodePointOneOne.runAction(activePointAnimation)
   }
   
   @IBAction func stopADC() {
     sendRequest(for: .stopADC)
     resistanceValues = []
-    nodePointOneOne.removeAllActions()
   }
 }
 
 // MARK: - ResultHandlerDelegate
 extension ResearchViewController: ResultHandlerDelegate {
-  func researchProcessManager(didComplete research: ResearchProcessManager, result: [UInt32]) {
-    // TODO: Send result to server or save to the CoreData
+  
+  func researchProcessManager(didCompleteWithResult: DoubleLinkedNodeList) {
+    print("Research completed")
+    rotateHand(.left)
+    // TODO: Form JSON and send the result to the server or save to the CoreData
   }
   
+  func researchProcessManager(activeNodeChangedTo node: NodePoint) {
+    print("Active node changed to \(node.sceneNode.name)")
+    if node.sceneNode.name == "Point 4" {
+      rotateHand(.right)
+    }
+    node.sceneNode.runAction(activePointAnimation)
+  }
+  
+  func researchProcessManager(didCompleteResearchFor node: NodePoint) {
+    print("Value for node \(node.sceneNode.name) was calculated")
+    node.sceneNode.removeAllActions()
+    node.sceneNode.runAction(actToGreen)
+  }
 }
 
 // MARK: - Bluetooth Extension
@@ -149,22 +176,6 @@ extension ResearchViewController {
     DispatchQueue.main.async(execute: { [self] in
       if let value = userInfo["value"] {
         resistanceLabel.text = "\(value) Ом"
-        if value > 0 {
-          resistanceValues.append(value)
-        }
-      }
-      
-      DispatchQueue.global(qos: .userInitiated).async {
-        if
-          let max = resistanceValues.max(),
-          max < 90_000,
-          let min = resistanceValues.min(),
-          max - min < 5000,
-          let average = resistanceValues.average()
-        {
-          stopADC()
-          print(#line, #function, average)
-        }
       }
     });
   }
