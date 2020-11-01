@@ -15,10 +15,25 @@ let CharUUID = CBUUID(string: "FFE1")
 let BLEServiceChangedStatusNotification = "kBLEServiceChangedStatusNotification"
 let BLEServiceObtainedResistanceNotification = "kBLEServiceObtainedResistanceNotification"
 
-let batteryLevelRequest: [UInt8] = [0x23, 0x42]
-let startADCRequest = [0x23, 0x52]
-let stopADCRequest = [0x23, 0x53]
-let versionRequest = [0x23, 0x56]
+enum PeripheralSignals: String {
+  case batteryLevel
+  case startADC
+  case stopADC
+  case version
+  
+  func getBytes() -> [UInt8] {
+    switch self {
+    case .batteryLevel:
+      return [0x23, 0x42]
+    case .startADC:
+      return [0x23, 0x52]
+    case .stopADC:
+      return [0x23, 0x53]
+    case .version:
+      return [0x23, 0x56]
+    }
+  }
+}
 
 class BTService: NSObject, CBPeripheralDelegate {
   var peripheral: CBPeripheral?
@@ -104,15 +119,13 @@ class BTService: NSObject, CBPeripheralDelegate {
     }
 
     if
-      characteristic.uuid == ParticlePeripheral.resistanceCharacteristicUUID,
+      characteristic.uuid == CharUUID,
       let newValue = characteristic.value,
       let string = String(bytes: newValue, encoding: .ascii)
     {
       let prefix = String(string[...1])
       let valueData = newValue.subdata(in: 2..<6)
       let value = valueData.withUnsafeBytes { $0.load(as: UInt32.self) }
-
-      print(value)
 
       switch prefix {
       case "#B":
@@ -127,7 +140,7 @@ class BTService: NSObject, CBPeripheralDelegate {
       case "#M":
         let resistanceDetails = ["value": value]
         NotificationCenter.default.post(name: Notification.Name(rawValue: BLEServiceObtainedResistanceNotification), object: self, userInfo: resistanceDetails)
-        print("ADC data packet")
+//        print("ADC data packet")
       default:
         break
       }
@@ -140,18 +153,7 @@ class BTService: NSObject, CBPeripheralDelegate {
     
     // See if characteristic has been discovered before writing to it
     if let resistanceCharacteristic = resistanceCharacteristic {
-      var bytesArray: [UInt8] = []
-      
-      switch signal {
-      case .batteryLevel:
-        bytesArray = [0x23, 0x42]
-      case .startADC:
-        bytesArray = [0x23, 0x52]
-      case .stopADC:
-        bytesArray = [0x23, 0x53]
-      case .version:
-        bytesArray = [0x23, 0x56]
-      }
+      let bytesArray: [UInt8] = signal.getBytes()
 
       self.peripheral?.writeValue(Data(bytesArray), for: resistanceCharacteristic, type: .withoutResponse)
     }

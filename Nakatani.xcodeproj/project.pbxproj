@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE9C51CB253B4AC100DCC9A6 /* BLEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C51CA253B4AC100DCC9A6 /* BLEViewController.swift */; };
+		DE60E1F2254EC29100CF176A /* DoublyLinkedPointsList + Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE60E1F1254EC29100CF176A /* DoublyLinkedPointsList + Point.swift */; };
+		DE60E1FC254ED5D900CF176A /* ResearchViewController + Scene Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE60E1FB254ED5D900CF176A /* ResearchViewController + Scene Setup.swift */; };
+		DE60E1FF254ED6CE00CF176A /* ResearchViewController + UI Elements Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE60E1FE254ED6CE00CF176A /* ResearchViewController + UI Elements Setup.swift */; };
 		DEB0EECB2477A90700357AAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB0EECA2477A90700357AAA /* AppDelegate.swift */; };
 		DEB0EECD2477A90700357AAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB0EECC2477A90700357AAA /* SceneDelegate.swift */; };
-		DEB0EECF2477A90700357AAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB0EECE2477A90700357AAA /* ViewController.swift */; };
+		DEB0EECF2477A90700357AAA /* ResearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB0EECE2477A90700357AAA /* ResearchViewController.swift */; };
 		DEB0EED22477A90700357AAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB0EED02477A90700357AAA /* Main.storyboard */; };
 		DEB0EED42477A91500357AAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEB0EED32477A91500357AAA /* Assets.xcassets */; };
 		DEB0EED72477A91500357AAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB0EED52477A91500357AAA /* LaunchScreen.storyboard */; };
@@ -18,14 +20,18 @@
 		DEB9E9E3253F433C008D53D8 /* String + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9E9E2253F433C008D53D8 /* String + Extensions.swift */; };
 		DEB9E9EB25432FDF008D53D8 /* BTDiscovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9E9EA25432FDF008D53D8 /* BTDiscovery.swift */; };
 		DEB9E9EE25432FEC008D53D8 /* BTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9E9ED25432FEC008D53D8 /* BTService.swift */; };
+		DEB9EA08254B18A8008D53D8 /* Array + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9EA07254B18A8008D53D8 /* Array + Extensions.swift */; };
+		DEE04A7C254C20BC004BF6A3 /* ResearchProcessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE04A7B254C20BC004BF6A3 /* ResearchProcessManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DE9C51CA253B4AC100DCC9A6 /* BLEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEViewController.swift; sourceTree = "<group>"; };
+		DE60E1F1254EC29100CF176A /* DoublyLinkedPointsList + Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DoublyLinkedPointsList + Point.swift"; sourceTree = "<group>"; };
+		DE60E1FB254ED5D900CF176A /* ResearchViewController + Scene Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResearchViewController + Scene Setup.swift"; sourceTree = "<group>"; };
+		DE60E1FE254ED6CE00CF176A /* ResearchViewController + UI Elements Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResearchViewController + UI Elements Setup.swift"; sourceTree = "<group>"; };
 		DEB0EEC72477A90700357AAA /* Nakatani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nakatani.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB0EECA2477A90700357AAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEB0EECC2477A90700357AAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DEB0EECE2477A90700357AAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DEB0EECE2477A90700357AAA /* ResearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchViewController.swift; sourceTree = "<group>"; };
 		DEB0EED12477A90700357AAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DEB0EED32477A91500357AAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEB0EED62477A91500357AAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -34,6 +40,8 @@
 		DEB9E9E2253F433C008D53D8 /* String + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extensions.swift"; sourceTree = "<group>"; };
 		DEB9E9EA25432FDF008D53D8 /* BTDiscovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTDiscovery.swift; sourceTree = "<group>"; };
 		DEB9E9ED25432FEC008D53D8 /* BTService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTService.swift; sourceTree = "<group>"; };
+		DEB9EA07254B18A8008D53D8 /* Array + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array + Extensions.swift"; sourceTree = "<group>"; };
+		DEE04A7B254C20BC004BF6A3 /* ResearchProcessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchProcessManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE60E1F0254EC27200CF176A /* ResearchProccessManager */ = {
+			isa = PBXGroup;
+			children = (
+				DEE04A7B254C20BC004BF6A3 /* ResearchProcessManager.swift */,
+			);
+			path = ResearchProccessManager;
+			sourceTree = "<group>";
+		};
+		DE60E1F4254EC2F100CF176A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DE60E1F1254EC29100CF176A /* DoublyLinkedPointsList + Point.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DE60E1F6254ECC0B00CF176A /* ResearchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DE60E201254ED71800CF176A /* Controller */,
+				DE60E1F4254EC2F100CF176A /* Model */,
+				DE60E204254ED7CF00CF176A /* View */,
+			);
+			path = ResearchScreen;
+			sourceTree = "<group>";
+		};
+		DE60E201254ED71800CF176A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DE60E1F0254EC27200CF176A /* ResearchProccessManager */,
+				DEB0EECE2477A90700357AAA /* ResearchViewController.swift */,
+				DE60E1FB254ED5D900CF176A /* ResearchViewController + Scene Setup.swift */,
+				DE60E1FE254ED6CE00CF176A /* ResearchViewController + UI Elements Setup.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DE60E204254ED7CF00CF176A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DEB0EED02477A90700357AAA /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		DEB0EEBE2477A90700357AAA = {
 			isa = PBXGroup;
 			children = (
@@ -66,24 +119,22 @@
 		DEB0EEC92477A90700357AAA /* Nakatani */ = {
 			isa = PBXGroup;
 			children = (
-				DEB9E9FF2544A451008D53D8 /* Extensions */,
 				DEB9E9FC2544A439008D53D8 /* App */,
-				DEB9E9E925432FC4008D53D8 /* BTService */,
-				DEB0EECE2477A90700357AAA /* ViewController.swift */,
-				DE9C51CA253B4AC100DCC9A6 /* BLEViewController.swift */,
-				DEB0EED02477A90700357AAA /* Main.storyboard */,
+				DE60E1F6254ECC0B00CF176A /* ResearchScreen */,
+				DEB9E9E925432FC4008D53D8 /* BluetoothService */,
+				DEB9E9FF2544A451008D53D8 /* Extensions */,
 				DEB9E9F02544A231008D53D8 /* Supporting Files */,
 			);
 			path = Nakatani;
 			sourceTree = "<group>";
 		};
-		DEB9E9E925432FC4008D53D8 /* BTService */ = {
+		DEB9E9E925432FC4008D53D8 /* BluetoothService */ = {
 			isa = PBXGroup;
 			children = (
 				DEB9E9EA25432FDF008D53D8 /* BTDiscovery.swift */,
 				DEB9E9ED25432FEC008D53D8 /* BTService.swift */,
 			);
-			path = BTService;
+			path = BluetoothService;
 			sourceTree = "<group>";
 		};
 		DEB9E9F02544A231008D53D8 /* Supporting Files */ = {
@@ -110,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				DEB9E9E2253F433C008D53D8 /* String + Extensions.swift */,
+				DEB9EA07254B18A8008D53D8 /* Array + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -186,11 +238,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE9C51CB253B4AC100DCC9A6 /* BLEViewController.swift in Sources */,
 				DEB9E9EE25432FEC008D53D8 /* BTService.swift in Sources */,
-				DEB0EECF2477A90700357AAA /* ViewController.swift in Sources */,
+				DEE04A7C254C20BC004BF6A3 /* ResearchProcessManager.swift in Sources */,
+				DE60E1F2254EC29100CF176A /* DoublyLinkedPointsList + Point.swift in Sources */,
+				DEB0EECF2477A90700357AAA /* ResearchViewController.swift in Sources */,
 				DEB9E9EB25432FDF008D53D8 /* BTDiscovery.swift in Sources */,
 				DEB0EECB2477A90700357AAA /* AppDelegate.swift in Sources */,
+				DE60E1FF254ED6CE00CF176A /* ResearchViewController + UI Elements Setup.swift in Sources */,
+				DE60E1FC254ED5D900CF176A /* ResearchViewController + Scene Setup.swift in Sources */,
+				DEB9EA08254B18A8008D53D8 /* Array + Extensions.swift in Sources */,
 				DEB0EECD2477A90700357AAA /* SceneDelegate.swift in Sources */,
 				DEB9E9E3253F433C008D53D8 /* String + Extensions.swift in Sources */,
 			);
@@ -339,7 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = KN392APKS7;
 				INFOPLIST_FILE = "$(SRCROOT)/Nakatani/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -347,7 +403,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.0.1;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.infibo.nakatani;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -360,7 +416,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = KN392APKS7;
 				INFOPLIST_FILE = "$(SRCROOT)/Nakatani/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -368,7 +424,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.0.1;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.infibo.nakatani;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
