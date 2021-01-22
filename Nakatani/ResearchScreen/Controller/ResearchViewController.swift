@@ -18,6 +18,7 @@ class ResearchViewController: UIViewController {
   @IBOutlet weak var resistanceLabel: UILabel!
   @IBOutlet weak var startButton: UIButton!
   @IBOutlet weak var stopButton: UIButton!
+  @IBOutlet weak var researchStateLabel: UILabel!
 
   // MARK: - Properties
   var scnScene = SCNScene()
@@ -61,6 +62,10 @@ class ResearchViewController: UIViewController {
   
   var researchProcessManager: ResearchProcessManager!
   
+  deinit {
+    print("ResearchViewController deinit")
+  }
+  
   // MARK: - Life cycle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -88,7 +93,7 @@ class ResearchViewController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    startADC()
+    researchProcessManager.start()
   }
   
   override var shouldAutorotate: Bool {
@@ -113,7 +118,7 @@ class ResearchViewController: UIViewController {
   // MARK: - @IBAction & @objc functions
   
   @objc func handleGesture(gesture: UISwipeGestureRecognizer) {
-    rotateHand(gesture.direction)
+//    rotateHand(gesture.direction)
   }
   
   @IBAction func startADC() {
@@ -129,22 +134,34 @@ class ResearchViewController: UIViewController {
 // MARK: - ResultHandlerDelegate
 extension ResearchViewController: ResultHandlerDelegate {
   
+  func researchProcessManager(researchStartedFor node: NodePoint) {
+    DispatchQueue.main.async {
+      self.researchStateLabel.text = "Проводится измерение..."
+    }
+  }
+  
   func researchProcessManager(didCompleteWithResult: DoubleLinkedNodeList) {
     print("Research completed")
     rotateHand(.left)
+    DispatchQueue.main.async {
+      self.researchStateLabel.text = "Исследование завершено. Сохранение результатов..."
+    }
     // TODO: Form JSON and send the result to the server or save to the CoreData
   }
   
   func researchProcessManager(activeNodeChangedTo node: NodePoint) {
-    print("Active node changed to \(node.sceneNode.name)")
+    print("Active node changed to \(node.sceneNode.name!)")
     if node.sceneNode.name == "Point 4" {
       rotateHand(.right)
     }
     node.sceneNode.runAction(activePointAnimation)
+    DispatchQueue.main.async {
+      self.researchStateLabel.text = "Измерение в точке завершено. Приложите ручку к следующей точке."
+    }
   }
   
   func researchProcessManager(didCompleteResearchFor node: NodePoint) {
-    print("Value for node \(node.sceneNode.name) was calculated")
+    print("Value for node \(node.sceneNode.name!) was calculated")
     node.sceneNode.removeAllActions()
     node.sceneNode.runAction(actToGreen)
   }

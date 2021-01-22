@@ -136,26 +136,37 @@ class DoubleLinkedNodeList {
     // Добавляем  точки
     let pointOneNode = SCNNode(geometry: pointGeometry.copy() as? SCNGeometry)
     pointOneNode.geometry?.firstMaterial = pointGeometry.firstMaterial?.copy() as? SCNMaterial
+    pointOneNode.geometry?.firstMaterial?.diffuse.contents = UIColor.red
     pointOneNode.position = SCNVector3(-0.55, -1.63, 0.21)
     
     let pointTwoNode = SCNNode(geometry: pointGeometry.copy() as? SCNGeometry)
     pointTwoNode.geometry?.firstMaterial = pointGeometry.firstMaterial?.copy() as? SCNMaterial
+    pointTwoNode.geometry?.firstMaterial?.diffuse.contents = UIColor.red
+
     pointTwoNode.position = SCNVector3(-0.1, -1.6, 0.18)
     
     let pointThreeNode = SCNNode(geometry: pointGeometry.copy() as? SCNGeometry)
     pointThreeNode.geometry?.firstMaterial = pointGeometry.firstMaterial?.copy() as? SCNMaterial
+    pointThreeNode.geometry?.firstMaterial?.diffuse.contents = UIColor.red
+
     pointThreeNode.position = SCNVector3(0.35, -1.63, 0.18)
     
     let pointFourNode = SCNNode(geometry: pointGeometry.copy() as? SCNGeometry)
     pointFourNode.geometry?.firstMaterial = pointGeometry.firstMaterial?.copy() as? SCNMaterial
+    pointFourNode.geometry?.firstMaterial?.diffuse.contents = UIColor.red
+
     pointFourNode.position = SCNVector3(-0.55, -1.6, -0.34)
     
     let pointFiveNode = SCNNode(geometry: pointGeometry.copy() as? SCNGeometry)
     pointFiveNode.geometry?.firstMaterial = pointGeometry.firstMaterial?.copy() as? SCNMaterial
+    pointFiveNode.geometry?.firstMaterial?.diffuse.contents = UIColor.red
+
     pointFiveNode.position = SCNVector3(-0.1, -1.6, -0.4)
     
     let pointSixNode = SCNNode(geometry: pointGeometry.copy() as? SCNGeometry)
     pointSixNode.geometry?.firstMaterial = pointGeometry.firstMaterial?.copy() as? SCNMaterial
+    pointSixNode.geometry?.firstMaterial?.diffuse.contents = UIColor.red
+
     pointSixNode.position = SCNVector3(0.35, -1.6, -0.3)
     
     return [pointOneNode, pointTwoNode, pointThreeNode, pointFourNode, pointFiveNode, pointSixNode]

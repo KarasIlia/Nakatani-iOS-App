@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DE047A6B254F06C900CCD026 /* DoubleLinkedNodeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE047A6A254F06C900CCD026 /* DoubleLinkedNodeList.swift */; };
+		DE047A712558B9EE00CCD026 /* SetupResearchSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE047A702558B9EE00CCD026 /* SetupResearchSettingsViewController.swift */; };
 		DE60E1FC254ED5D900CF176A /* ResearchViewController + Scene Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE60E1FB254ED5D900CF176A /* ResearchViewController + Scene Setup.swift */; };
 		DE60E1FF254ED6CE00CF176A /* ResearchViewController + UI Elements Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE60E1FE254ED6CE00CF176A /* ResearchViewController + UI Elements Setup.swift */; };
 		DEB0EECB2477A90700357AAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB0EECA2477A90700357AAA /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		DE047A6A254F06C900CCD026 /* DoubleLinkedNodeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleLinkedNodeList.swift; sourceTree = "<group>"; };
+		DE047A702558B9EE00CCD026 /* SetupResearchSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupResearchSettingsViewController.swift; sourceTree = "<group>"; };
 		DE60E1FB254ED5D900CF176A /* ResearchViewController + Scene Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResearchViewController + Scene Setup.swift"; sourceTree = "<group>"; };
 		DE60E1FE254ED6CE00CF176A /* ResearchViewController + UI Elements Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResearchViewController + UI Elements Setup.swift"; sourceTree = "<group>"; };
 		DEB0EEC72477A90700357AAA /* Nakatani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nakatani.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				DEB9E9FC2544A439008D53D8 /* App */,
+				DE047A702558B9EE00CCD026 /* SetupResearchSettingsViewController.swift */,
 				DE60E1F6254ECC0B00CF176A /* ResearchScreen */,
 				DEB9E9E925432FC4008D53D8 /* BluetoothService */,
 				DEB9E9FF2544A451008D53D8 /* Extensions */,
@@ -248,6 +251,7 @@
 				DEB9EA08254B18A8008D53D8 /* Array + Extensions.swift in Sources */,
 				DE047A6B254F06C900CCD026 /* DoubleLinkedNodeList.swift in Sources */,
 				DEB0EECD2477A90700357AAA /* SceneDelegate.swift in Sources */,
+				DE047A712558B9EE00CCD026 /* SetupResearchSettingsViewController.swift in Sources */,
 				DEB9E9E3253F433C008D53D8 /* String + Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
